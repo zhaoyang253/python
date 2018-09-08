@@ -1,12 +1,25 @@
 # -*- coding: utf-8 -*-
 import math
-def move(n,a,b,c):
-    if n == 1:
-        print(a,'-->',c)
-    else:
-        move(n-1,a,c,b)
-        move(1,a,b,c)
-        move(n-1,b,a,c)
+def trim(s):
+    while s[:1] == ' ':
+        s = s[1:]
+    while s[-1:] == ' ':
+        s = s[:-1]
+    return s
     
 
-move(3,'A','B','C')
+# 测试:
+if trim('hello  ') != 'hello':
+    print('测试失败!')
+elif trim('  hello') != 'hello':
+    print('测试失败!')
+elif trim('  hello  ') != 'hello':
+    print('测试失败!')
+elif trim('  hello  world  ') != 'hello  world':
+    print('测试失败!')
+elif trim('') != '':
+    print('测试失败!')
+elif trim('    ') != '':
+    print('测试失败!')
+else:
+    print('测试成功!')
