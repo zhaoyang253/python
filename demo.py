@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
 import math
-def trim(s):
-    while s[:1] == ' ':
-        s = s[1:]
-    while s[-1:] == ' ':
-        s = s[:-1]
-    return s
-    
 
-# 测试:
-if trim('hello  ') != 'hello':
+def findMinAndMax(L):
+    if len(L) == 0:
+        L_min = None
+        L_max = None
+    else:
+        L_min = min(L)
+        L_max = max(L)
+    return (L_min,L_max)
+
+# 测试
+if findMinAndMax([]) != (None, None):
     print('测试失败!')
-elif trim('  hello') != 'hello':
+elif findMinAndMax([7]) != (7, 7):
     print('测试失败!')
-elif trim('  hello  ') != 'hello':
+elif findMinAndMax([7, 1]) != (1, 7):
     print('测试失败!')
-elif trim('  hello  world  ') != 'hello  world':
-    print('测试失败!')
-elif trim('') != '':
-    print('测试失败!')
-elif trim('    ') != '':
+elif findMinAndMax([7, 1, 3, 9, 5]) != (1, 9):
     print('测试失败!')
 else:
     print('测试成功!')
+
+
