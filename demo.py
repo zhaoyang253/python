@@ -1,25 +1,14 @@
 # -*- coding: utf-8 -*-
-import math
+# python D:\Users\zhao\Desktop\python\demo.py
 
-def findMinAndMax(L):
-    if len(L) == 0:
-        L_min = None
-        L_max = None
-    else:
-        L_min = min(L)
-        L_max = max(L)
-    return (L_min,L_max)
+L1 = ['Hello', 'World', 18, 'Apple', None]
+L2 = [s.lower() for s in L1 if isinstance(s, str)]
 
-# 测试
-if findMinAndMax([]) != (None, None):
-    print('测试失败!')
-elif findMinAndMax([7]) != (7, 7):
-    print('测试失败!')
-elif findMinAndMax([7, 1]) != (1, 7):
-    print('测试失败!')
-elif findMinAndMax([7, 1, 3, 9, 5]) != (1, 9):
-    print('测试失败!')
+# 测试:
+print(L2)
+if L2 == ['hello', 'world', 'apple']:
+    print('测试通过!')
 else:
-    print('测试成功!')
+    print('测试失败!')
 
 
